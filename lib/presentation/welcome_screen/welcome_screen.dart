@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_task_manager/core/app_export.dart';
 import 'package:flutter_task_manager/widgets/custom_elevated_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +14,9 @@ class WelcomeScreen extends StatelessWidget {
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(vertical: 47.v),
                 child: Column(children: [
-                  Spacer(flex: 36),
-                  CustomImageView(
-                      imagePath: ImageConstant.imgGroup,
-                      height: 103.v,
-                      width: 106.h),
+                  const Spacer(flex: 36),
+                  Image.asset(ImageConstant.imgGroup,
+                      height: 103.v, width: 106.h),
                   SizedBox(height: 62.v),
                   _buildTitleSection(context),
                   const Spacer(flex: 63),
@@ -28,22 +27,24 @@ class WelcomeScreen extends StatelessWidget {
                       }),
                   SizedBox(height: 40.v),
                   GestureDetector(
+                      key: const ValueKey('login'),
                       onTap: () {
                         onTapTxtAlreadyhavean(context);
                       },
-                      child: RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: "Already Have An Account ?",
-                                style: theme.textTheme.bodyLarge),
-                            TextSpan(text: " "),
-                            TextSpan(
-                                text: "Log in",
-                                style:
-                                    CustomTextStyles.titleLargeRobotoffffffff),
-                            TextSpan(text: " ")
-                          ]),
-                          textAlign: TextAlign.left))
+                      child: const Text('Already have an account , Log in')
+                      // RichText(
+                      //     text: TextSpan(children: [
+                      //       TextSpan(
+                      //           text: "Already Have An Account ?",
+                      //           style: theme.textTheme.bodyLarge),
+                      //       TextSpan(text: " "),
+                      //       TextSpan(
+                      //           text: "Log in",
+                      //           style: CustomTextStyles.titleLargeRobotoffffffff),
+                      //       TextSpan(text: " ")
+                      //     ]),
+                      //     textAlign: TextAlign.left),
+                      )
                 ]))));
   }
 

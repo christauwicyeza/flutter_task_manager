@@ -4,7 +4,7 @@ import 'package:flutter_task_manager/presentation/welcome_screen/welcome_screen.
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('welcome screen ...', (tester) async {
+  testWidgets('Testing welcome screen sign up button', (tester) async {
     await tester.pumpWidget(MaterialApp(
       routes: {
         AppRoutes.welcomeScreen: (context) => const WelcomeScreen(),
@@ -13,6 +13,19 @@ void main() {
     ));
     await tester.pump();
 
-    expect(find.text('Sign Up'), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, "Sign up"), findsOneWidget);
+  });
+
+  testWidgets('Testing welcome screen', (tester) async {
+    await tester.pumpWidget(MaterialApp(
+      routes: {
+        AppRoutes.welcomeScreen: (context) => const WelcomeScreen(),
+      },
+      home: const WelcomeScreen(),
+    ));
+    await tester.pump();
+
+    expect(find.widgetWithText(ElevatedButton, "Sign up"), findsOneWidget);
+    // expect(find.byKey(const ValueKey('login')), findsOneWidget);
   });
 }
