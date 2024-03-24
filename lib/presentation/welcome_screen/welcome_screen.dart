@@ -20,10 +20,9 @@ class WelcomeScreen extends StatelessWidget {
                       width: 106.h),
                   SizedBox(height: 62.v),
                   _buildTitleSection(context),
-                  Spacer(flex: 63),
-                  CustomElevatedButton(
-                      width: 176.h,
-                      text: "Sign up ",
+                  const Spacer(flex: 63),
+                  ElevatedButton(
+                      child: const Text("Sign up "),
                       onPressed: () {
                         onTapSignUp(context);
                       }),
