@@ -26,35 +26,44 @@ class SignUpScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 40.0),
-            CustomTextFormField(
+            const SizedBox(height: 40.0),
+            TextFormField(
+              key: const ValueKey("emailTextFieldKey"),
               controller: emailController,
-              hintText: "Email",
-              prefix: Icon(Icons.email),
+              decoration: const InputDecoration( 
+                hintText: "Email",
+              prefix: Icon(Icons.email),),
+             
             ),
-            SizedBox(height: 20.0),
-            CustomTextFormField(
+            TextFormField(
+              key: const ValueKey("usernameTextFieldKey"),
               controller: userNameController,
-              hintText: "Username",
-              prefix: Icon(Icons.person),
+              decoration: const InputDecoration( 
+                hintText: "Username",
+              prefix:  Icon(Icons.person),),
+             
             ),
-            SizedBox(height: 20.0),
-            CustomTextFormField(
+
+            const SizedBox(height: 20.0),
+            TextFormField(
+              key: const ValueKey("passwordTextFieldKey"),
               controller: passwordController,
-              hintText: "Password",
-              prefix: Icon(Icons.lock),
-              obscureText: true,
+              decoration: const InputDecoration( 
+                hintText: "Password",
+              prefix:  Icon(Icons.lock),),
+             
             ),
-            SizedBox(height: 20.0),
-            CustomTextFormField(
+            TextFormField(
+              key: const ValueKey("confirmPasswordTextFieldKey"),
               controller: confirmPasswordController,
-              hintText: "Confirm Password",
-              prefix: Icon(Icons.lock),
-              obscureText: true,
+              decoration: const InputDecoration( 
+                hintText: "confirmPassword",
+              prefix:  Icon(Icons.lock),),
+             
             ),
-            SizedBox(height: 40.0),
-            CustomElevatedButton(
-              text: "Sign Up",
+            const SizedBox(height: 40.0),
+            ElevatedButton(
+              child: Text("Sign Up"),
               onPressed: () {
                 signUp(context);
               },
