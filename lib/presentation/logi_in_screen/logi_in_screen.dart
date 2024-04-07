@@ -18,7 +18,7 @@ class LogiInScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
+            Text(
               "Welcome to Task Manager!",
               style: TextStyle(
                 fontSize: 28.0,
@@ -28,7 +28,6 @@ class LogiInScreen extends StatelessWidget {
             ),
             SizedBox(height: 40.0),
             TextFormField(
-              key: const ValueKey('emailFieldKey'),
               controller: emailController,
               decoration: InputDecoration(
                 hintText: "Email",
@@ -42,7 +41,6 @@ class LogiInScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.0),
             TextFormField(
-              key: const ValueKey('passwordFieldKey'),
               controller: passwordController,
               decoration: InputDecoration(
                 hintText: "Password",
@@ -56,8 +54,8 @@ class LogiInScreen extends StatelessWidget {
               },
             ),
             SizedBox(height: 20.0),
-            ElevatedButton(
-              child: const Text("Log in"),
+            CustomElevatedButton(
+              text: "Log in",
               onPressed: () async {
                 String email = emailController.text;
                 String password = passwordController.text;
@@ -96,8 +94,8 @@ class LogiInScreen extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                ElevatedButton(
-                  child: Text("Log in with Google"),
+                CustomElevatedButton(
+                  text: "Log in with Google",
                   onPressed: () async {
                     try {
                       final GoogleSignInAccount? googleUser = await GoogleSignIn(

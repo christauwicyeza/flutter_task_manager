@@ -207,11 +207,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: const Text("Cancel"),
+                      child: Text("Cancel"),
                     ),
                     TextButton(
                       onPressed: () => logout(),
-                      child: const Text("Logout"),
+                      child: Text("Logout"),
                     ),
                   ],
                 ),
